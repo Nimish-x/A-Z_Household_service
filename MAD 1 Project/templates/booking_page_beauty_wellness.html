@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Service</title>
+</head>
+<body>
+    <h1></h1>
+    <form action="{{url_for('beauty_wellness')}}" method="POST">
+        <h3>Hey {{name}}, you wish to confirm this booking?</h3>
+        <button type="submit">Confirm</button>
+    </form>
+    <form action="{{ url_for('user_page') }}" method="GET">
+        <button type="submit">Cancel</button>
+    </form>
+</body>
+</html>

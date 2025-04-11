@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Service</title>
+</head>
+<body>
+    <h1>Edit Booking</h1>
+    <form action="{{ url_for('edit', id=id) }}" method="POST">
+        <h3>{{ name }}, you can edit the details of your booking below:</h3>
+        <label for="service_name">Service Name:</label>
+        <select id="service_name" name="service_name" required>
+            <option value="Home Cleaning" {% if service_name == 'Home Cleaning' %}selected{% endif %}>Home Cleaning</option>
+            <option value="Beauty and Wellness" {% if service_name == 'Beauty and Wellness' %}selected{% endif %}>Beauty and Wellness</option>
+            <option value="Appliance Repair"  {% if service_name == 'Appliance Repair' %}selected{% endif %}>Appliance Repair</option>
+            <option value="Gardening"  {% if service_name == 'Gardening' %}selected{% endif %}>Gardening</option>
+            <option value="Pest Control"  {% if service_name == 'Pest Control' %}selected{% endif %}>Pest Control</option>
+        </select><br>
+        <button type="submit">Save Changes</button>
+    </form>
+    <form action="{{ url_for('user_page') }}" method="GET">
+        <button type="submit">Cancel</button>
+    </form>
+</body>
+</html>
